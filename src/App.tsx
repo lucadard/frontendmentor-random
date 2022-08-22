@@ -1,4 +1,4 @@
-import InteractiveCardDetailsForm from './apps/interactive-card-details-form/AppComponent'
+import InteractiveCardDetailsForm from './apps/interactive-card-details-form/src/AppComponent'
 
 const App = () => {
   return (

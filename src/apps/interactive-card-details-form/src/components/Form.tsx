@@ -1,4 +1,5 @@
-import React, { useState, useContext, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+
 import { useFormData } from '../context/CardDataContext'
 
 type Props = {
