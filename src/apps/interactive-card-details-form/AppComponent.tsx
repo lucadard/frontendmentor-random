@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import { useState } from 'react'
 
+import { useWidth } from './hooks/useWidth'
 import { FormDataProvider } from './context/CardDataContext'
 import Background from './images/bg-main-desktop.png'
 import MobileBackground from './images/bg-main-mobile.png'
@@ -27,19 +28,8 @@ const IconComplete = () => (
 )
 
 const AppComponent = () => {
+  const { width } = useWidth()
   const [isFormValidAndSent, setIsFormValidAndSent] = useState(false)
-  const [width, setWidth] = useState(window.innerWidth)
-  useEffect(() => {
-    const updateWindowDimensions = () => {
-      const newWidth = window.innerWidth
-      setWidth(newWidth)
-      console.log('updating width')
-    }
-
-    window.addEventListener('resize', updateWindowDimensions)
-
-    return () => window.removeEventListener('resize', updateWindowDimensions)
-  }, [])
 
   const unsendForm = () => {
     setIsFormValidAndSent(false)
